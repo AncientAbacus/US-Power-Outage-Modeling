@@ -1,5 +1,8 @@
-# US-Power-Outage-Modeling
-Project for DSC 80
+# US Power Outage Severity Modeling
+By Gino Angelici (gangelici@ucsd.edu) and Ifunanya Okoroma (iokoroma@ucsd.edu) <br />
+A project for DSC 80: Practice and Application of Data Science taught at UC San Diego during the Spring 2023 quarter
+
+Our exploratory data analysis on this dataset can be found [here](https://ancientabacus.github.io/US-Power-Outage-Trends/).
 
 ### Framing the Problem
 
@@ -12,8 +15,6 @@ Cleaned dataset with relevant columns:
 |     3 |   2010 |      10 | Minnesota    | MN            | East North Central | Fall     |       10.87 | cold               | severe weather     |             1024 |                70000 |        50         |
 |     4 |   2012 |       6 | Minnesota    | MN            | East North Central | Summer   |       11.79 | normal             | severe weather     |               56 |                68200 |        42.5       |
 |     5 |   2015 |       7 | Minnesota    | MN            | East North Central | Summer   |       13.07 | warm               | severe weather     |              250 |               250000 |        29         |
-
-Our exploratory data analysis on this dataset can be found [here](https://ancientabacus.github.io/US-Power-Outage-Trends/).
 
 ### Baseline Model
 
