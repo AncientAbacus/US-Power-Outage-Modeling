@@ -38,10 +38,14 @@ Cleaned dataset with relevant columns:
 |     5 |   2015 |       7 | Minnesota    | MN            | East North Central | Summer   |       13.07 | warm               | severe weather     |              250 |               250000 |        29         |
 
 ## Baseline Model
-We both had thoughts on potential features we could use for our baseline model. With dozens of columns, we had many options at our disposal. Since we had many columns that we felt would have a great fit for our baseline model, we performed k-fold cross-validation on four different groups of two features. These features were ['SEASON', 'CUSTOMERS.AFFECTED'], ['SEASON', 'CLIMATE.CATEGORY'], ['DEMAND.LOSS.MW', 'CUSTOMERS.AFFECTED'], and ['CLIMATE.REGION', 'RES.PRICE']. Building the Pipelines for these features involved the transformation of categorical features 'SEASON', 'CLIMATE.CATEGORY', and 'CLIMATE.REGION' through the use of One-Hot Encoding. The only other individual Pipeline used was written to keep the non-categorical columns as is before running them through a regression. We needed to run a for loop to provide the outcomes of each cross-validation score. The features that would end up minimizing the RSME with a value of 92.990978 would be 'CLIMATE.REGION' and 'RES.PRICE'. 
+We both had thoughts on potential features we could use for our baseline model. With dozens of columns, we had many options at our disposal. Since we had many columns that we felt would have a great fit for our baseline model, we performed k-fold cross-validation on four different groups of two features. These features were ['SEASON', 'CUSTOMERS.AFFECTED'], ['SEASON', 'CLIMATE.CATEGORY'], ['DEMAND.LOSS.MW', 'CUSTOMERS.AFFECTED'], and ['CLIMATE.REGION', 'RES.PRICE']. Building the Pipelines for these features involved the transformation of categorical features 'SEASON', 'CLIMATE.CATEGORY', and 'CLIMATE.REGION' through the use of One-Hot Encoding. The only other individual Pipeline used was written to keep the non-categorical columns as is before running them through a regression. We needed to run a for loop to provide the outcomes of each cross-validation score. The features that would end up minimizing the RSME with a value of 92.990978 would be 'CLIMATE.REGION' and 'RES.PRICE'. 'CLIMATE.REGION' is a categorical feature while 'RES.PRICE' is an ordinal quantitative feature.
 
 ## Final Model
-When it came to our final model, we were asked to improve upon our baseline model by using our original features along with engineering new ones. When it comes to the original 'CLIMATE.REGION' and 'RES.PRICE' features, those have been transformed by One-Hot Encoding and Standardization, respectfully. Some addition features include using the original 'DEMAND.LOSS.MW' column and transforming two new features, which are 'SEASON' and 'RES.CUSTOMERS'. One-Hot Encoding was applied to 'SEASON' while the 'RES.CUSTOMERS' features was to be broken up into quantiles.
+When it came to our final model, we were asked to improve upon our baseline model by using our original features along with engineering new ones. When it comes to the original 'CLIMATE.REGION' and 'RES.PRICE' features, those have been transformed by One-Hot Encoding and Standardization, respectfully. Some additional features include using the original 'DEMAND.LOSS.MW' column and transforming two new features, which are 'SEASON' and 'RES.CUSTOMERS'. One-Hot Encoding was applied to 'SEASON' while the 'RES.CUSTOMERS' features were to be broken up into quantiles. 'CLIMATE.REGION' and 'SEASON' are categorical features while 'RES.PRICE', 'DEMAND.LOSS.MW', and 'RES.CUSTOMERS" are ordinal quantitative features. The algorithm we applied to our model was Lasso Regression, which yielded the best results. 
+
+However, obtaining these features was not completed without another round of cross-validation. This time, a dataframe was created to store all of these values of the final Pipeline that stored all the preprocessing steps for 13 different features. One-Hot Encoding was applied to ['CLIMATE.REGION', 'SEASON', 'CAUSE.CATEGORY', 'U.S._STATE']. Standardization was applied to ['RES.PRICE', 'TOTAL.PRICE', 'COM.PRICE', 'IND.PRICE']. A preprocessing step to keep the feature the same was applied to 'DEMAND.LOSS.MW'. Quantile division was applied to ['RES.CUSTOMERS', 'COM.CUSTOMERS', 'TOTAL.CUSTOMERS', 'IND.CUSTOMERS'])].
+
+When computing the average RSME, this number came out to be better than our baseline. We then fit our final model to compute the fairness analysis.
 
 ## Fairness Analysis
 
@@ -49,16 +53,16 @@ Group X is California
 Group Y is not California
 
 Permutation Test:
-Null Hypothesis: Our model is fair. Its precision for outage duration in California and not in California are roughly the same, and any differences are due to random chance.
-Alternative Hypothesis: Our model is unfair. Its precision for outage duration not in California lower than its precision for outage duration in Louisiana.
+Null Hypothesis: Our model is fair. Its precision for outage duration in California and not in California is roughly the same, and any differences are due to random chance.
+Alternative Hypothesis: Our model is unfair. Its precision for outage duration not in California is lower than its precision for outage duration in Louisiana.
 
 Evaluation metric: RMSE
-Test statistic: difference in RMSE
+Test statistic: Difference in RMSE
 Significance level: 0.05
 
 <iframe src="assets/FAIR_EDA.html" width=800 height=600 frameBorder=0></iframe>
 
-We noticed that states besides California were mostly variable, so we decided to compare California to rest of US states. We chose California as Group X, not California as Group Y.
+We noticed that states besides California were mostly variable, so we decided to compare California to the rest of the US states. We chose California as Group X, not California as Group Y.
 
 <iframe src="assets/FAIR.html" width=800 height=600 frameBorder=0></iframe>
 
