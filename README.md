@@ -38,7 +38,7 @@ Cleaned dataset with relevant columns:
 |     5 |   2015 |       7 | Minnesota    | MN            | East North Central | Summer   |       13.07 | warm               | severe weather     |              250 |               250000 |        29         |
 
 ## Baseline Model
-We both had thoughts on potential features we could use for our baseline model. With dozens of columns, we had many options at our disposal. Since we had many columns that we felt would have a great fit for our baseline model, we performed k-fold cross-validation on four different groups of two features. The proposed duo of features to use for our model were ['SEASON', 'CUSTOMERS.AFFECTED'], ['SEASON', 'CLIMATE.CATEGORY'], ['DEMAND.LOSS.MW', 'CUSTOMERS.AFFECTED'], and ['CLIMATE.REGION', 'RES.PRICE'].
+We both had thoughts on potential features we could use for our baseline model. With dozens of columns, we had many options at our disposal. Since we had many columns that we felt would have a great fit for our baseline model, we performed k-fold cross-validation on four different groups of two features. Building the Pipelines for these features involved the transformation of categorical features 'SEASON', 'CLIMATE.CATEGORY', and 'CLIMATE.REGION' through the use of One-Hot Encoding.
 
 ## Final Model
 
