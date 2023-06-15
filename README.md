@@ -2,7 +2,7 @@
 By Gino Angelici (gangelici@ucsd.edu) and Ifunanya Okoroma (iokoroma@ucsd.edu) <br />
 A project for DSC 80: Practice and Application of Data Science taught at UC San Diego during the Spring 2023 quarter
 
-### Framing the Problem
+## Framing the Problem
 For the fifth and final project in the DSC 80 course, we were posed to identify a prediction problem to solve. This proposed problem came from the same dataset we analyzed in Project 3. Our exploratory data analysis from that project can be found [here](https://ancientabacus.github.io/US-Power-Outage-Trends/). As with Project 3, we downloaded research data on power outages in the United States from Purdue University. The data was found at this [link](https://engineering.purdue.edu/LASCI/research-data/outages/outagerisks). The data ranged from January 2000 to July 2016. The dataset contains 1534 rows (observations) and 56 columns (variables).
 
 ### Prediction Problem
@@ -36,11 +36,11 @@ Cleaned dataset with relevant columns:
 |     4 |   2012 |       6 | Minnesota    | MN            | East North Central | Summer   |       11.79 | normal             | severe weather     |               56 |                68200 |        42.5       |
 |     5 |   2015 |       7 | Minnesota    | MN            | East North Central | Summer   |       13.07 | warm               | severe weather     |              250 |               250000 |        29         |
 
-### Baseline Model
+## Baseline Model
 
-### Final Model
+## Final Model
 
-### Fairness Analysis
+## Fairness Analysis
 
 Group X is California
 Group Y is not California
