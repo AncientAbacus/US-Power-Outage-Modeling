@@ -41,6 +41,7 @@ Cleaned dataset with relevant columns:
 We both had thoughts on potential features we could use for our baseline model. With dozens of columns, we had many options at our disposal. Since we had many columns that we felt would have a great fit for our baseline model, we performed k-fold cross-validation on four different groups of two features. These features were ['SEASON', 'CUSTOMERS.AFFECTED'], ['SEASON', 'CLIMATE.CATEGORY'], ['DEMAND.LOSS.MW', 'CUSTOMERS.AFFECTED'], and ['CLIMATE.REGION', 'RES.PRICE']. Building the Pipelines for these features involved the transformation of categorical features 'SEASON', 'CLIMATE.CATEGORY', and 'CLIMATE.REGION' through the use of One-Hot Encoding. The only other individual Pipeline used was written to keep the non-categorical columns as is before running them through a regression. We needed to run a for loop to provide the outcomes of each cross-validation score. The features that would end up minimizing the RSME with a value of 92.990978 would be 'CLIMATE.REGION' and 'RES.PRICE'. 
 
 ## Final Model
+When it came to our final model, we were asked to improve upon our baseline model by using our original features along with engineering new ones.
 
 ## Fairness Analysis
 
