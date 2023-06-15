@@ -1,9 +1,10 @@
 # US Power Outage Severity Modeling
 By Gino Angelici (gangelici@ucsd.edu) and Ifunanya Okoroma (iokoroma@ucsd.edu) <br />
-A project for DSC 80: Practice and Application of Data Science taught at UC San Diego during the Spring 2023 quarter
+A project for DSC 80: Practice and Application of Data Science taught at UC San Diego during the Spring 2023 quarter <br />
+Our exploratory data analysis from Project 3 can be found [here](https://ancientabacus.github.io/US-Power-Outage-Trends/) <br />
 
 ## Framing the Problem
-For the fifth and final project in the DSC 80 course, we were posed to identify a prediction problem to solve. This proposed problem came from the same dataset we analyzed in Project 3. Our exploratory data analysis from that project can be found [here](https://ancientabacus.github.io/US-Power-Outage-Trends/). As with Project 3, we downloaded research data on power outages in the United States from Purdue University. The data was found at this [link](https://engineering.purdue.edu/LASCI/research-data/outages/outagerisks). The data ranged from January 2000 to July 2016. The dataset contains 1534 rows (observations) and 56 columns (variables).
+For the fifth and final project in the DSC 80 course, we were posed to identify a prediction problem to solve. This proposed problem came from the same dataset we analyzed in Project 3. As with Project 3, we downloaded research data on power outages in the United States from Purdue University. The data was found at this [link](https://engineering.purdue.edu/LASCI/research-data/outages/outagerisks). The data ranged from January 2000 to July 2016. The dataset contains 1534 rows (observations) and 56 columns (variables).
 
 ### Prediction Problem
 Predict the average duration of power outages in 2022 in hours.
@@ -37,6 +38,7 @@ Cleaned dataset with relevant columns:
 |     5 |   2015 |       7 | Minnesota    | MN            | East North Central | Summer   |       13.07 | warm               | severe weather     |              250 |               250000 |        29         |
 
 ## Baseline Model
+We both had thoughts on potential features we could use for our baseline model. With dozens of columns, we had many options at our disposal. Since we had many columns that we felt would have a great fit for our baseline model, we performed k-fold cross-validation on four different groups of two features. The proposed duo of features to use for our model were ['SEASON', 'CUSTOMERS.AFFECTED'], ['SEASON', 'CLIMATE.CATEGORY'], ['DEMAND.LOSS.MW', 'CUSTOMERS.AFFECTED'], and ['CLIMATE.REGION', 'RES.PRICE'].
 
 ## Final Model
 
