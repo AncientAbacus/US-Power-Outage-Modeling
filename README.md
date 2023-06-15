@@ -13,7 +13,7 @@ Cleaned dataset with relevant columns:
 |     4 |   2012 |       6 | Minnesota    | MN            | East North Central | Summer   |       11.79 | normal             | severe weather     |               56 |                68200 |        42.5       |
 |     5 |   2015 |       7 | Minnesota    | MN            | East North Central | Summer   |       13.07 | warm               | severe weather     |              250 |               250000 |        29         |
 
-Our exploratory data analysis on this dataset can be found [here].(https://ancientabacus.github.io/US-Power-Outage-Trends/)
+Our exploratory data analysis on this dataset can be found [here](https://ancientabacus.github.io/US-Power-Outage-Trends/).
 
 ### Baseline Model
 
