@@ -47,10 +47,11 @@ When computing the minimum RSME, this number came out to be better than our base
 
 ## Fairness Analysis
 
-Group X is California <br />
-Group Y is not California
+Group X: is California <br />
+Group Y: is not California
 
-Permutation Test: <br />
+Permutation Test:
+
 Null Hypothesis: Our model is fair. Its precision for outage duration in California and not in California is roughly the same, and any differences are due to random chance. <br />
 Alternative Hypothesis: Our model is unfair. Its precision for outage duration not in California is lower than its precision for outage duration in Louisiana.
 
