@@ -6,19 +6,17 @@ Our exploratory data analysis from Project 3 can be found [here](https://ancient
 ## Framing the Problem
 For the fifth and final project in the DSC 80 course, we were posed to identify a prediction problem to solve. This proposed problem came from the same dataset we analyzed in Project 3. As with Project 3, we downloaded research data on power outages in the United States from Purdue University. The data was found at this [link](https://engineering.purdue.edu/LASCI/research-data/outages/outagerisks). The data ranged from January 2000 to July 2016. The dataset contains 1534 rows (observations) and 56 columns (variables).
 
-### Prediction Problem
-Predict the average duration of power outages in 2022 in hours.
+Prediction Problem: Predict the average duration of power outages in 2022 in hours.
 
-### Prediction Type
-We decided to perform regression.
+Prediction Type: We decided to perform regression.
 
-### Response Variable: 'OUTAGE.DURATION'
+Response Variable: 'OUTAGE.DURATION' <br />
 Reason: Longer power outages lead to more damage such as food spoilage, inability to work, and loss of access to utilities.
 
-### Performance Metric: Root Mean Squared Error (RMSE)
+Performance Metric: Root Mean Squared Error (RMSE) <br />
 Reason: RMSE is a popular choice for measuring the performance of a regression model. It represents how far the response variable unit is off during a prediction, making it easy to understand the model's accuracy.
 
-## Cleaning
+### Cleaning
 We commenced the same thorough data cleaning process that we conducted when completing Project 3. We used the same code to obtain the clean dataset once again. Here is a review of the steps we took. <br />
 
 1. Before converting to a .csv file from a Microsoft Excel (.xlsx) file, we manually removed the first five rows and the two columns as these were not actually data entries. <br />
@@ -49,15 +47,15 @@ When computing the minimum RSME, this number came out to be better than our base
 
 ## Fairness Analysis
 
-Group X is California
+Group X is California <br />
 Group Y is not California
 
-Permutation Test:
-Null Hypothesis: Our model is fair. Its precision for outage duration in California and not in California is roughly the same, and any differences are due to random chance.
+Permutation Test: <br />
+Null Hypothesis: Our model is fair. Its precision for outage duration in California and not in California is roughly the same, and any differences are due to random chance. <br />
 Alternative Hypothesis: Our model is unfair. Its precision for outage duration not in California is lower than its precision for outage duration in Louisiana.
 
-Evaluation metric: RMSE
-Test statistic: Difference in RMSE
+Evaluation metric: RMSE <br />
+Test statistic: Difference in RMSE <br />
 Significance level: 0.05
 
 <iframe src="assets/FAIR_EDA.html" width=800 height=600 frameBorder=0></iframe>
@@ -66,6 +64,6 @@ We noticed that states besides California were mostly variable, so we decided to
 
 <iframe src="assets/FAIR.html" width=800 height=600 frameBorder=0></iframe>
 
-Resulting p-value: 0.03
+Resulting p-value: 0.03 <br />
 
 Conclusion: We reject the null hypothesis at the significance level of 0.05. We conclude that there is evidence to support the claim the model is unfair in predicting the severity of power outages outside of California.
